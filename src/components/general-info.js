@@ -42,47 +42,53 @@ class GeneralInfo extends React.Component {
     render() {
         if (this.state.mode === "edit") {
             return (
-                <form className="generalinfo">
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Full Name"
-                        value={this.state.nameValue}
-                        onChange={this.handleNameChange}
-                    ></input>
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="E-mail"
-                        value={this.state.emailValue}
-                        onChange={this.handleEmailChange}
-                    ></input>
-                    <input
-                        type="number"
-                        id="phonenumber"
-                        placeholder="Phone Number"
-                        value={this.state.numberValue}
-                        onChange={this.handleNumberChange}
-                    ></input>
-                    <button
-                        className="button"
-                        type="submit"
-                        onClick={this.handleSubmission}
-                    >
-                        Submit
-                    </button>
-                </form>
+                <div>
+                    <h1>General Information</h1>
+                    <form className="generalinfo">
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Full Name"
+                            value={this.state.nameValue}
+                            onChange={this.handleNameChange}
+                        ></input>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="E-mail"
+                            value={this.state.emailValue}
+                            onChange={this.handleEmailChange}
+                        ></input>
+                        <input
+                            type="number"
+                            id="phonenumber"
+                            placeholder="Phone Number"
+                            value={this.state.numberValue}
+                            onChange={this.handleNumberChange}
+                        ></input>
+                        <button
+                            className="button"
+                            type="submit"
+                            onClick={this.handleSubmission}
+                        >
+                            Submit
+                        </button>
+                    </form>
+                </div>
             );
         } else if (this.state.mode === "show") {
             return (
-                <form className="generalinfo">
-                    <div id="name">{this.state.nameValue}</div>
-                    <div id="email">{this.state.emailValue}</div>
-                    <div id="phonenumber">{this.state.numberValue}</div>
-                    <button className="button" onClick={this.handleEdition}>
-                        Edit
-                    </button>
-                </form>
+                <div>
+                    <h1>General Information</h1>
+                    <form className="generalinfo">
+                        <div id="name">{this.state.nameValue}</div>
+                        <div id="email">{this.state.emailValue}</div>
+                        <div id="phonenumber">{this.state.numberValue}</div>
+                        <button className="button" onClick={this.handleEdition}>
+                            Edit
+                        </button>
+                    </form>
+                </div>
             );
         }
     }

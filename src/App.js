@@ -1,5 +1,6 @@
 import React from "react";
 import GeneralInfo from "./components/general-info";
+import EducationalExperience from "./components/educational-experience"
 
 class App extends React.Component {
     render() {
@@ -7,6 +8,8 @@ class App extends React.Component {
             <div className="app">
                 <div className="cv">
                     <GeneralInfo />
+                    <div className="separator"></div>
+                    <EducationalExperience/>
                 </div>
             </div>
         );
