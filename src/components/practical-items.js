@@ -1,20 +1,22 @@
 import React from "react";
 
-class EducationalItems extends React.Component {
+class PracticalItems extends React.Component {
     constructor() {
         super();
 
         this.state = {
-            schoolTitle: "",
-            studyTitle: "",
+            companyName: "",
+            positionTitle: "",
+            mainTasks: "",
             startDate: "",
             endDate: "",
             mode: "add",
         };
 
         this.submitForm = this.submitForm.bind(this);
-        this.handleSchoolChange = this.handleSchoolChange.bind(this);
-        this.handleStudyChange = this.handleStudyChange.bind(this);
+        this.handleCompanyChange = this.handleCompanyChange.bind(this);
+        this.handlePositionChange = this.handlePositionChange.bind(this);
+        this.handleTasksChange = this.handleTasksChange.bind(this);
         this.handleStartDateChange = this.handleStartDateChange.bind(this);
         this.handleEndDateChange = this.handleEndDateChange.bind(this);
         this.editItem = this.editItem.bind(this);
@@ -25,17 +27,22 @@ class EducationalItems extends React.Component {
 
     submitForm() {
 
-        if (this.state.schoolTitle === "" || this.state.studyTitle === "" || this.state.startDate === "" || this.state.endDate === "") return
+        if (this.state.companyName === "" || this.state.positionTitle === "" || this.state.mainTasks === "" ||this.state.startDate === "" || this.state.endDate === "") return
 
         this.setState({ mode: "show" });
+
     }
 
-    handleSchoolChange(e) {
-        this.setState({ schoolTitle: e.target.value });
+    handleCompanyChange(e) {
+        this.setState({ companyName: e.target.value });
     }
 
-    handleStudyChange(e) {
-        this.setState({ studyTitle: e.target.value });
+    handlePositionChange(e) {
+        this.setState({ positionTitle: e.target.value });
+    }
+
+    handleTasksChange(e) {
+        this.setState({ mainTasks: e.target.value });
     }
 
     handleStartDateChange(e) {
@@ -56,8 +63,9 @@ class EducationalItems extends React.Component {
                 return (
                     <div>
                         <div className="experienceitems">
-                            <div>School Title: {this.state.schoolTitle}</div>
-                            <div>Study Title: {this.state.studyTitle}</div>
+                            <div>Company Name: {this.state.companyName}</div>
+                            <div>Position Title: {this.state.positionTitle}</div>
+                            <div>Main Tasks: {this.state.mainTasks}</div>
                             <div>From: {this.state.startDate}</div>
                             <div>To: {this.state.endDate}</div>
                         </div>
@@ -67,19 +75,27 @@ class EducationalItems extends React.Component {
             } else if (this.state.mode === "add") {
                 return (
                     <form className="inputs">
-                        <label htmlFor="schooltitle">School Title</label>
+                        <label htmlFor="companyname">Company Name</label>
                         <input
-                            id="schooltitle"
-                            value={this.state.schoolTitle}
-                            onChange={this.handleSchoolChange}
+                            id="companyname"
+                            value={this.state.companyName}
+                            onChange={this.handleCompanyChange}
                             required
                         ></input>
-                        <label htmlFor="studytitle">Title Of Study</label>
+                        <label htmlFor="positiontitle">Position Title</label>
                         <input
-                            id="studytitle"
+                            id="positiontitle"
                             type="text"
-                            value={this.state.studyTitle}
-                            onChange={this.handleStudyChange}
+                            value={this.state.positionTitle}
+                            onChange={this.handlePositionChange}
+                            required
+                        ></input>
+                        <label htmlFor="maintasks">Main Tasks</label>
+                        <input
+                            id="maintasks"
+                            type="text"
+                            value={this.state.mainTasks}
+                            onChange={this.handleTasksChange}
                             required
                         ></input>
                         <label htmlFor="startdate">Start Date</label>
@@ -108,4 +124,4 @@ class EducationalItems extends React.Component {
     }
 }
 
-export default EducationalItems
+export default PracticalItems

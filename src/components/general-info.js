@@ -43,7 +43,7 @@ class GeneralInfo extends React.Component {
         if (this.state.mode === "edit") {
             return (
                 <div>
-                    <h1 className="generalinfotitle">General Information</h1>
+                    <h1 className="title">General Information</h1>
                     <form className="generalinfo">
                         <input
                             type="text"

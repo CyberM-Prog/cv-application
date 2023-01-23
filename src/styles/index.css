@@ -40,3 +40,41 @@ button {
     height: 2rem;
     font-size: 1.5rem;
 }
+
+.title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.experienceitems {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.itemedit {
+    width: 8rem;
+    margin-bottom: 2rem;
+}
+
+.itemsubmitbutton {
+    margin-bottom: 1rem;
+}
+
+.experience, .inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs > input {
+    height: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.inputs > label {
+    font-size: 1.2rem;
+}
+
+#startdate, #enddate {
+    font-size: 1rem;
+}

@@ -1,7 +1,7 @@
 import React from "react";
-import EducationalItems from "./educational-items";
+import PracticalItems from "./practical-items";
 
-class EducationalExperience extends React.Component {
+class PracticalExperience extends React.Component {
     constructor() {
         super();
 
@@ -14,13 +14,13 @@ class EducationalExperience extends React.Component {
     }
 
     addForm() {
-        this.setState((state) => ({items: state.items.concat(<EducationalItems key={this.state.items.length}/>)}))
+        this.setState((state) => ({items: state.items.concat(<PracticalItems key={this.state.items.length} />)}))
     }
 
     render() {
             return (
                 <div className="experience">
-                    <h1 className="title">Educational Experience</h1>
+                    <h1 className="title">Practical Experience</h1>
                     {this.state.items}
                     <button onClick={this.addForm}>Add</button>
                 </div>
@@ -30,4 +30,4 @@ class EducationalExperience extends React.Component {
     }
 }
 
-export default EducationalExperience;
+export default PracticalExperience;
