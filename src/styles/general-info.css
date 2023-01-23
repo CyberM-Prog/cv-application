@@ -1,7 +1,10 @@
 .generalinfo {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+}
+
+.generalinfo > input {
+    margin-bottom: 1rem;
 }
 
 .generalinfo > * {
@@ -12,6 +15,7 @@
 .generalinfo > div {
     display: flex;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
 #name {

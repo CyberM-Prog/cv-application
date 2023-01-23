@@ -6,11 +6,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .app {
-    background-color: #1572A1;
+    background-color: #1572a1;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -30,7 +30,7 @@
 
 .separator {
     height: 3px;
-    background-color: #1572A1;
+    background-color: #1572a1;
     margin: 2rem 0;
 }
 
@@ -60,7 +60,8 @@ button {
     margin-bottom: 1rem;
 }
 
-.experience, .inputs {
+.experience,
+.inputs {
     display: flex;
     flex-direction: column;
 }
@@ -75,6 +76,7 @@ button {
     font-size: 1.2rem;
 }
 
-#startdate, #enddate {
+#startdate,
+#enddate {
     font-size: 1rem;
 }

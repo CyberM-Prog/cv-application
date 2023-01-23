@@ -18,14 +18,16 @@ class EducationalItems extends React.Component {
         this.handleStartDateChange = this.handleStartDateChange.bind(this);
         this.handleEndDateChange = this.handleEndDateChange.bind(this);
         this.editItem = this.editItem.bind(this);
-
-
-
     }
 
     submitForm() {
-
-        if (this.state.schoolTitle === "" || this.state.studyTitle === "" || this.state.startDate === "" || this.state.endDate === "") return
+        if (
+            this.state.schoolTitle === "" ||
+            this.state.studyTitle === "" ||
+            this.state.startDate === "" ||
+            this.state.endDate === ""
+        )
+            return;
 
         this.setState({ mode: "show" });
     }
@@ -51,61 +53,65 @@ class EducationalItems extends React.Component {
     }
 
     render() {
-
-            if (this.state.mode === "show") {
-                return (
-                    <div>
-                        <div className="experienceitems">
-                            <div>School Title: {this.state.schoolTitle}</div>
-                            <div>Study Title: {this.state.studyTitle}</div>
-                            <div>From: {this.state.startDate}</div>
-                            <div>To: {this.state.endDate}</div>
-                        </div>
-                        <button onClick={this.editItem} className="itemedit">Edit</button>
+        if (this.state.mode === "show") {
+            return (
+                <div>
+                    <div className="experienceitems">
+                        <div>School Title: {this.state.schoolTitle}</div>
+                        <div>Study Title: {this.state.studyTitle}</div>
+                        <div>From: {this.state.startDate}</div>
+                        <div>To: {this.state.endDate}</div>
                     </div>
-                );
-            } else if (this.state.mode === "add") {
-                return (
-                    <form className="inputs">
-                        <label htmlFor="schooltitle">School Title</label>
-                        <input
-                            id="schooltitle"
-                            value={this.state.schoolTitle}
-                            onChange={this.handleSchoolChange}
-                            required
-                        ></input>
-                        <label htmlFor="studytitle">Title Of Study</label>
-                        <input
-                            id="studytitle"
-                            type="text"
-                            value={this.state.studyTitle}
-                            onChange={this.handleStudyChange}
-                            required
-                        ></input>
-                        <label htmlFor="startdate">Start Date</label>
-                        <input
-                            id="startdate"
-                            type="date"
-                            value={this.state.startDate}
-                            onChange={this.handleStartDateChange}
-                            required
-                        ></input>
-                        <label htmlFor="enddate">End Date</label>
-                        <input
-                            id="enddate"
-                            type="date"
-                            value={this.state.endDate}
-                            onChange={this.handleEndDateChange}
-                            required
-                        ></input>
-                        <button type="button" className="itemsubmitbutton" onClick={this.submitForm}>Submit</button>
-
-                    </form>
-                );
-            }
-
-        
+                    <button onClick={this.editItem} className="itemedit">
+                        Edit
+                    </button>
+                </div>
+            );
+        } else if (this.state.mode === "add") {
+            return (
+                <form className="inputs">
+                    <label htmlFor="schooltitle">School Title</label>
+                    <input
+                        id="schooltitle"
+                        value={this.state.schoolTitle}
+                        onChange={this.handleSchoolChange}
+                        required
+                    ></input>
+                    <label htmlFor="studytitle">Title Of Study</label>
+                    <input
+                        id="studytitle"
+                        type="text"
+                        value={this.state.studyTitle}
+                        onChange={this.handleStudyChange}
+                        required
+                    ></input>
+                    <label htmlFor="startdate">Start Date</label>
+                    <input
+                        id="startdate"
+                        type="date"
+                        value={this.state.startDate}
+                        onChange={this.handleStartDateChange}
+                        required
+                    ></input>
+                    <label htmlFor="enddate">End Date</label>
+                    <input
+                        id="enddate"
+                        type="date"
+                        value={this.state.endDate}
+                        onChange={this.handleEndDateChange}
+                        required
+                    ></input>
+                    <button
+                        type="button"
+                        className="itemsubmitbutton"
+                        onClick={this.submitForm}
+                    >
+                        Submit
+                    </button>
+                </form>
+            );
+        }
     }
 }
 
-export default EducationalItems
+export default EducationalItems;

@@ -45,24 +45,24 @@ class GeneralInfo extends React.Component {
                 <div>
                     <h1 className="title">General Information</h1>
                     <form className="generalinfo">
+                        <label htmlFor="name">Full Name</label>
                         <input
                             type="text"
                             id="name"
-                            placeholder="Full Name"
                             value={this.state.nameValue}
                             onChange={this.handleNameChange}
                         ></input>
+                        <label htmlFor="email">E-Mail</label>
                         <input
                             type="email"
                             id="email"
-                            placeholder="E-mail"
                             value={this.state.emailValue}
                             onChange={this.handleEmailChange}
                         ></input>
+                        <label htmlFor="phonenumber">Phone Number</label>
                         <input
                             type="number"
                             id="phonenumber"
-                            placeholder="Phone Number"
                             value={this.state.numberValue}
                             onChange={this.handleNumberChange}
                         ></input>
@@ -79,7 +79,7 @@ class GeneralInfo extends React.Component {
         } else if (this.state.mode === "show") {
             return (
                 <div>
-                    <h1 className="generalinfotitle">General Information</h1>
+                    <h1 className="title">General Information</h1>
                     <form className="generalinfo">
                         <div id="name">{this.state.nameValue}</div>
                         <div id="email">{this.state.emailValue}</div>
