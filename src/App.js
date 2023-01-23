@@ -10,6 +10,8 @@ class App extends React.Component {
                     <GeneralInfo />
                     <div className="separator"></div>
                     <EducationalExperience/>
+                    <div className="separator"></div>
+
                 </div>
             </div>
         );

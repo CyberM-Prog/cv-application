@@ -43,7 +43,7 @@ class GeneralInfo extends React.Component {
         if (this.state.mode === "edit") {
             return (
                 <div>
-                    <h1>General Information</h1>
+                    <h1 className="generalinfotitle">General Information</h1>
                     <form className="generalinfo">
                         <input
                             type="text"
@@ -79,7 +79,7 @@ class GeneralInfo extends React.Component {
         } else if (this.state.mode === "show") {
             return (
                 <div>
-                    <h1>General Information</h1>
+                    <h1 className="generalinfotitle">General Information</h1>
                     <form className="generalinfo">
                         <div id="name">{this.state.nameValue}</div>
                         <div id="email">{this.state.emailValue}</div>

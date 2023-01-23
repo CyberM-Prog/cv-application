@@ -1,0 +1,31 @@
+.education, .inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.educationaltitle {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.inputs > input {
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.inputs > label {
+    font-size: 1.25rem;
+}
+
+#startdate, #enddate {
+    font-size: 1rem;
+}
+
+.educationitems {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.educationalbutton {
+    margin-bottom: 1rem;
+}
