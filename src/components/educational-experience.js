@@ -1,34 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import EducationalItems from "./educational-items";
 
-class EducationalExperience extends React.Component {
-    constructor() {
-        super();
+function EducationalExperience() {
+    const [items, setItems] = useState([]);
 
-        this.state = {
-            items: [],
-        };
-
-        this.addForm = this.addForm.bind(this);
+    function addForm() {
+        setItems(items.concat(<EducationalItems key={items.length} />));
     }
 
-    addForm() {
-        this.setState((state) => ({
-            items: state.items.concat(
-                <EducationalItems key={this.state.items.length} />
-            ),
-        }));
-    }
-
-    render() {
-        return (
-            <div className="experience">
-                <h1 className="title">Educational Experience</h1>
-                {this.state.items}
-                <button onClick={this.addForm}>Add</button>
-            </div>
-        );
-    }
+    return (
+        <div className="experience">
+            <h1 className="title">Educational Experience</h1>
+            {items}
+            <button onClick={addForm}>Add</button>
+        </div>
+    );
 }
 
 export default EducationalExperience;

@@ -1,34 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import PracticalItems from "./practical-items";
 
-class PracticalExperience extends React.Component {
-    constructor() {
-        super();
+function PracticalExperience() {
+    const [items, setItems] = useState([]);
 
-        this.state = {
-            items: [],
-        };
-
-        this.addForm = this.addForm.bind(this);
+    function addForm() {
+        setItems(items.concat(<PracticalItems key={items.length} />));
     }
 
-    addForm() {
-        this.setState((state) => ({
-            items: state.items.concat(
-                <PracticalItems key={this.state.items.length} />
-            ),
-        }));
-    }
-
-    render() {
-        return (
-            <div className="experience">
-                <h1 className="title">Practical Experience</h1>
-                {this.state.items}
-                <button onClick={this.addForm}>Add</button>
-            </div>
-        );
-    }
+    return (
+        <div className="experience">
+            <h1 className="title">Practical Experience</h1>
+            {items}
+            <button onClick={addForm}>Add</button>
+        </div>
+    );
 }
 
 export default PracticalExperience;

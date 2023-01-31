@@ -1,132 +1,116 @@
-import React from "react";
+import React, { useState } from "react";
 
-class PracticalItems extends React.Component {
-    constructor() {
-        super();
+function PracticalItems() {
+    const [companyName, setCompanyName] = useState("");
+    const [positionTitle, setPositionTitle] = useState("");
+    const [mainTasks, setMainTasks] = useState("");
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+    const [mode, setMode] = useState("add");
 
-        this.state = {
-            companyName: "",
-            positionTitle: "",
-            mainTasks: "",
-            startDate: "",
-            endDate: "",
-            mode: "add",
-        };
-
-        this.submitForm = this.submitForm.bind(this);
-        this.handleCompanyChange = this.handleCompanyChange.bind(this);
-        this.handlePositionChange = this.handlePositionChange.bind(this);
-        this.handleTasksChange = this.handleTasksChange.bind(this);
-        this.handleStartDateChange = this.handleStartDateChange.bind(this);
-        this.handleEndDateChange = this.handleEndDateChange.bind(this);
-        this.editItem = this.editItem.bind(this);
-    }
-
-    submitForm() {
+    function submitForm() {
         if (
-            this.state.companyName === "" ||
-            this.state.positionTitle === "" ||
-            this.state.mainTasks === "" ||
-            this.state.startDate === "" ||
-            this.state.endDate === ""
+            companyName === "" ||
+            positionTitle === "" ||
+            mainTasks === "" ||
+            startDate === "" ||
+            endDate === ""
         )
             return;
 
-        this.setState({ mode: "show" });
+        setMode("show");
     }
 
-    handleCompanyChange(e) {
-        this.setState({ companyName: e.target.value });
+    function handleCompanyChange(e) {
+        setCompanyName(e.target.value);
     }
 
-    handlePositionChange(e) {
-        this.setState({ positionTitle: e.target.value });
+    function handlePositionChange(e) {
+        setPositionTitle(e.target.value);
     }
 
-    handleTasksChange(e) {
-        this.setState({ mainTasks: e.target.value });
+    function handleTasksChange(e) {
+        setMainTasks(e.target.value);
     }
 
-    handleStartDateChange(e) {
-        this.setState({ startDate: e.target.value });
+    function handleStartDateChange(e) {
+        setStartDate(e.target.value);
     }
 
-    handleEndDateChange(e) {
-        this.setState({ endDate: e.target.value });
+    function handleEndDateChange(e) {
+        setEndDate(e.target.value);
     }
 
-    editItem() {
-        this.setState({ mode: "add" });
+    function editItem() {
+        setMode("add");
     }
 
-    render() {
-        if (this.state.mode === "show") {
-            return (
-                <div>
-                    <div className="experienceitems">
-                        <div>Company Name: {this.state.companyName}</div>
-                        <div>Position Title: {this.state.positionTitle}</div>
-                        <div>Main Tasks: {this.state.mainTasks}</div>
-                        <div>From: {this.state.startDate}</div>
-                        <div>To: {this.state.endDate}</div>
-                    </div>
-                    <button onClick={this.editItem} className="itemedit">
-                        Edit
-                    </button>
+    if (mode === "show") {
+        return (
+            <div>
+                <div className="experienceitems">
+                    <div>Company Name: {companyName}</div>
+                    <div>Position Title: {positionTitle}</div>
+                    <div>Main Tasks: {mainTasks}</div>
+                    <div>From: {startDate}</div>
+                    <div>To: {endDate}</div>
                 </div>
-            );
-        } else if (this.state.mode === "add") {
-            return (
-                <form className="inputs">
-                    <label htmlFor="companyname">Company Name</label>
-                    <input
-                        id="companyname"
-                        value={this.state.companyName}
-                        onChange={this.handleCompanyChange}
-                        required
-                    ></input>
-                    <label htmlFor="positiontitle">Position Title</label>
-                    <input
-                        id="positiontitle"
-                        type="text"
-                        value={this.state.positionTitle}
-                        onChange={this.handlePositionChange}
-                        required
-                    ></input>
-                    <label htmlFor="maintasks">Main Tasks</label>
-                    <input
-                        id="maintasks"
-                        type="text"
-                        value={this.state.mainTasks}
-                        onChange={this.handleTasksChange}
-                        required
-                    ></input>
-                    <label htmlFor="startdate">Start Date</label>
-                    <input
-                        id="startdate"
-                        type="date"
-                        value={this.state.startDate}
-                        onChange={this.handleStartDateChange}
-                        required
-                    ></input>
-                    <label htmlFor="enddate">End Date</label>
-                    <input
-                        id="enddate"
-                        type="date"
-                        value={this.state.endDate}
-                        onChange={this.handleEndDateChange}
-                        required
-                    ></input>
-                    <button
-                        type="button"
-                        className="itemsubmitbutton"
-                        onClick={this.submitForm}
-                    >
-                        Submit
-                    </button>
-                </form>
-            );
-        }
+                <button onClick={editItem} className="itemedit">
+                    Edit
+                </button>
+            </div>
+        );
+    } else if (mode === "add") {
+        return (
+            <form className="inputs">
+                <label htmlFor="companyname">Company Name</label>
+                <input
+                    id="companyname"
+                    value={companyName}
+                    onChange={handleCompanyChange}
+                    required
+                ></input>
+                <label htmlFor="positiontitle">Position Title</label>
+                <input
+                    id="positiontitle"
+                    type="text"
+                    value={positionTitle}
+                    onChange={handlePositionChange}
+                    required
+                ></input>
+                <label htmlFor="maintasks">Main Tasks</label>
+                <input
+                    id="maintasks"
+                    type="text"
+                    value={mainTasks}
+                    onChange={handleTasksChange}
+                    required
+                ></input>
+                <label htmlFor="startdate">Start Date</label>
+                <input
+                    id="startdate"
+                    type="date"
+                    value={startDate}
+                    onChange={handleStartDateChange}
+                    required
+                ></input>
+                <label htmlFor="enddate">End Date</label>
+                <input
+                    id="enddate"
+                    type="date"
+                    value={endDate}
+                    onChange={handleEndDateChange}
+                    required
+                ></input>
+                <button
+                    type="button"
+                    className="itemsubmitbutton"
+                    onClick={submitForm}
+                >
+                    Submit
+                </button>
+            </form>
+        );
     }
 }
 
